@@ -30,6 +30,10 @@ body a:hover {
     background-color: #F0EEE3;
 }
 
+::selection {
+  background: #ffb347; /* WebKit/Blink Browsers */
+}
+
 
 /****************
 TIME & DATE
