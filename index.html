@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Mono:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <time id="js-clock"></time>
+      <span id="js-date" class="date"></span>
+    </header>
+    <div class="wrapper">
+      <section class="main">
+        <section class="reddit">
+          <h3>social</h3>
+          <ul id="social">
+            <li><a href="http://www.facebook.com">facebook</a></li>
+            <li><a href="http://www.reddit.com/">reddit</a></li>
+            <li><a href="http://www.quora.com">quora</a></li>
+            <li><a href="http://www.linkedin.com">linkedin</a></li>
+          </ul>
+        </section>
+        <section class="school">
+          <h3>school</h3>
+          <ul>
+            <li><a href="http://www.my.uncc.edu/">my.uncc</a></li>
+            <li><a href="http://canvas.uncc.edu/">canvas</a><li>
+            <li><a href="https://www.gmail.uncc.edu">gmail</a><li>
+          </ul>
+        </section>
+        <section class="dev">
+          <h3>dev</h3>
+          <ul>
+            <li><a href="https://www.github.com">github</a></li>
+            <li><a href="https://stackoverflow.com/">stackoverflow</a></li>
+          </ul>
+        </section>
+        <section class="general">
+          <h3>general</h3>
+          <ul>
+            <li><a href="https://gmail.com/">gmail</a></li>
+            <li><a href="https://www.youtube.com">youtube</a></li>
+            <li><a href="https://www.netflix.com">netflix</a></li>
+          </ul>
+        </section>
+        <section class="search">
+          <form action="https://www.google.com/" method="get">
+            <input type="search" autocomplete="off" placeholder="search something" name="q" class="searchbox">
+            <input type="submit" value="search" style="display:none;">
+          </form>
+        </section>
+      </section>
+      <footer>
+      </footer>
+    </div>
+    <script>
+      function ordinal_suffix_of(i) {
+        var j = i % 10,
+            k = i % 100;
+        if (j == 1 && k != 11) {
+            return i + "st";
+        }
+        if (j == 2 && k != 12) {
+            return i + "nd";
+        }
+        if (j == 3 && k != 13) {
+            return i + "rd";
+        }
+        return i + "th";
+      }
+
+      class Clock {
+        constructor() {
+          this._clockEl = document.getElementById('js-clock');
+          this._dateEl = document.getElementById('js-date');
+          this._setTime = this._setTime.bind(this);
+          this._start();
+        }
+        _pad(num) {
+          return (`0${num.toString()}`).slice(-2);
+        }
+        _setTime() {
+          const date = new Date();
+          const hours = this._pad(date.getHours());
+          const minutes = this._pad(date.getMinutes());
+          const seconds = this._pad(date.getSeconds());
+          this._clockEl.innerHTML = `${hours}:${minutes}:${seconds}`;
+
+          const year = date.getFullYear();
+          const month = this._pad(date.getMonth());
+          const day = date.getDate();
+
+          var weekdays = new Array(7);
+          weekdays[0] = "søndag";
+          weekdays[1] = "mandag";
+          weekdays[2] = "tirsdag";
+          weekdays[3] = "onsdag";
+          weekdays[4] = "torsdag";
+          weekdays[5] = "fredag";
+          weekdays[6] = "lørdag";
+
+          var months = new Array(12);
+          months['00'] = "januar";
+          months['01'] = "februar";
+          months['02'] = "mars";
+          months['03'] = "april";
+          months['04'] = "mai";
+          months['05'] = "juni";
+          months['06'] = "juli";
+          months['07'] = "august";
+          months['08'] = "september";
+          months['09'] = "oktober";
+          months['10'] = "november";
+          months['11'] = "desember";
+
+          var weekday   = weekdays[date.getDay()];
+          var fullMonth = months[month];
+
+          this._dateEl.innerHTML = weekday + ', ' + ordinal_suffix_of(day) + ' ' + fullMonth + ' ' + year;
+        }
+        _start() {
+          this._setTime();
+          setInterval(this._setTime, 1000);
+        }
+      }
+      const clock = new Clock();
+    </script>
+  </body>
+</html>
