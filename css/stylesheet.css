@@ -93,11 +93,11 @@ LISTS
     margin: 0 auto;
 }
 
-.reddit h3 {
+.social h3 {
     background-color: #81A1C1;
 }
 
-.reddit a:hover {
+.social a:hover {
     color: #81A1C1;
 }
 
