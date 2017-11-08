@@ -93,10 +93,6 @@ LISTS
     margin: 0 auto;
 }
 
-.main .search {
-    width: 92%;
-}
-
 .reddit h3 {
     background-color: #81A1C1;
 }
@@ -127,23 +123,4 @@ LISTS
 
 .general a:hover {
     color: #D08770;
-}
-
-
-/****************
-SEARCH
-****************/
-
-.searchbox {
-    width: 100%;
-    padding: 15px;
-    background-color: #434C5E;
-    color: #F0EEE3;
-    border: none;
-    font-family: 'Roboto Mono', monospace;
-    transition: 0.2s;
-}
-
-.searchbox:focus {
-    background-color: #4C566A;
 }
