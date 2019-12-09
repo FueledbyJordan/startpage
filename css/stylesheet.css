@@ -94,33 +94,17 @@ LISTS
 }
 
 .social h3 {
-    background-color: #81A1C1;
+    background-color: #F66733;
 }
 
 .social a:hover {
-    color: #81A1C1;
+    color: #F66733;
 }
 
-.school h3 {
-    background-color: #8FBCBB;
+.services h3 {
+    background-color: #F66733;
 }
 
-.school a:hover {
-    color: #8FBCBB;
-}
-
-.dev h3 {
-    background-color: #A3BE8C;
-}
-
-.dev a:hover {
-    color: #A3BE8C;
-}
-
-.general h3 {
-    background-color: #D08770;
-}
-
-.general a:hover {
-    color: #D08770;
+.services a:hover {
+    color: #F66733;
 }
