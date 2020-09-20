@@ -153,7 +153,7 @@ template {
 
 :root {
   /* colors */
-  --background: #0E0E0E;
+  --background: linear-gradient(45deg, #AB1C76, #392DD1);
   --foreground: #F1F1F1;
 
   /* fonts */
